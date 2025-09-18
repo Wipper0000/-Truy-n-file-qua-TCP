@@ -1,225 +1,167 @@
-<h1 align="center">Truyền file qua TCP </h1>
 
+<h2 align="center">
+    <a href="https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin">
+    🎓 Faculty of Information Technology (DaiNam University)
+    </a>
+</h2>
+<h2 align="center">
+   TRUYỀN FILE QUA GIAO THỨC TCP
+</h2>
 <div align="center">
+    <p align="center">
+        <img src="docs/aiotlab_logo.png" alt="AIoTLab Logo" width="170"/>
+        <img src="docs/fitdnu_logo.png" alt="AIoTLab Logo" width="180"/>
+        <img src="docs/dnu_logo.png" alt="DaiNam University Logo" width="200"/>
+    </p>
 
-<p align="center">
-  <img src="./anhimage/logodnu.webp" alt="DaiNam University Logo" width="200"/>
-    <img src="./anhimage/LogoAIoTLab.png" alt="AIoTLab Logo" width="170"/>
-</p>
-
-[![Fit DNU](https://img.shields.io/badge/Fit%20DNU-green?style=for-the-badge)](https://fitdnu.net/)
-[![DaiNam University](https://img.shields.io/badge/DaiNam%20University-red?style=for-the-badge)](https://dainam.edu.vn)
-</div>
-
-<h2 align="center"> Sinh Viên</h2>
-
----
-
-## 🌟 Kiến trúc hệ thống
-<p align="center">
-  Để chuyển file qua TCP, bạn có thể dùng socket trong Python (hoặc ngôn ngữ khác). Mình sẽ minh họa với Python vì dễ thử nghiệm
-  <img src="./anhimage/Flowchart.png" alt="Flowchart" width="800"/>
-</p>
-
----
-
-
-## 🛠️ CÔNG NGHỆ SỬ DỤNG
-
-<div align="left">
-
-- **Ngôn ngữ**: Python 3.x  
-- **Thư viện chuẩn**:  
-  - `socket`: Tạo kết nối TCP giữa client và server.  
-  - `os`: Xử lý tên file, đường dẫn.  
-- **Mô hình kiến trúc**: Client - Server TCP  
+[![AIoTLab](https://img.shields.io/badge/AIoTLab-green?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
+[![Faculty of Information Technology](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
+[![DaiNam University](https://img.shields.io/badge/DaiNam%20University-orange?style=for-the-badge)](https://dainam.edu.vn)
 
 </div>
 
-##  Yêu cầu hệ thống
+## 📖 1. Giới thiệu
+Trong thời đại công nghệ thông tin phát triển mạnh mẽ, nhu cầu trao đổi và chia sẻ dữ liệu giữa các máy tính ngày càng phổ biến. Một trong những phương thức quan trọng và được sử dụng rộng rãi là truyền file qua giao thức TCP (Transmission Control Protocol).
 
--Có thể sử dụng Visual Studio Code nếu máy có GPU đủ mạnh
-<br>
-  hoặc là
-<br>
--Sử dụng <a href="https://colab.google/" target="_blank">Google Colab</a> hỗ trợ cho dùng miễn phí GPU để train model.
+TCP là giao thức hướng kết nối, đảm bảo tính tin cậy, toàn vẹn và đúng thứ tự dữ liệu trong quá trình truyền. Nhờ đó, việc truyền file qua TCP có thể áp dụng cho nhiều hệ thống thực tế như: dịch vụ FTP, ứng dụng chat, hệ thống lưu trữ dữ liệu phân tán, hay các phần mềm hỗ trợ tải xuống.
 
-## 🚀 Hướng dẫn cài đặt và chạy
+🔑 **Các chức năng chính của hệ thống**:
 
+-Kết nối Client – Server qua TCP Socket.
 
-## 🚀 Hướng dẫn cài đặt và chạy mô hình YOLOv8
+-Truyền và nhận file giữa các client.
 
-### Bước 1: Thu thập dữ liệu
-Sử dụng dataset đã được gán nhãn sẵn tại môi trường Trường Đại học Đại Nam:
+-Hiển thị tiến trình truyền và nhận file .
 
-[👉 Link Dataset](https://universe.roboflow.com/ttnt-nyz2m/ai-fxy4m/dataset/2)
+-Lưu file tự động vào thư mục chỉ định.
 
-### Bước 2: Sử dụng Google Colab để Train mô hình
-Truy cập vào Google Colab để thực hiện huấn luyện mô hình YOLOv8.
+## 🛠️ 2. Công nghệ sử dụng
 
-*Lưu ý: Nên sử dụng Colab Pro để huấn luyện mô hình nặng hơn.*
+**Ngôn ngữ lập trình**: Java
 
-```python
-from google.colab import drive
-drive.mount('/content/drive')
-```
+**Giao thức**: TCP,TCP Socket
 
-### Bước 3: Cài đặt các thư viện cần thiết
-Cài đặt thư viện và Ultralytics bằng câu lệnh sau:
+**Công nghệ giao diện**: Java Swing
 
-```bash
-!pip install ultralytics
-```
+**Thư viện**:
 
-### Bước 4: Huấn luyện mô hình
-Sử dụng lệnh dưới đây để huấn luyện mô hình YOLOv8:
+-java.net 
 
-```bash
-!python /content/yolov8/train.py \
-    --data "/content/drive/MyDrive/BTL_AII/AI.v3-ai.yolov8pytorch/data.yaml" \
-    --cfg "/content/yolov8/cfg/training/yolov8.yaml" \
-    --weights "/content/SCB-dataset/yolov8/yolov8.pt" \
-    --epochs 50 \
-    --batch-size 16 \
-    --img-size 640 \
-    --device 0 \
-    --workers 4 \
-    --cache-images \
-    --name Yolo7_BTL \
-    --project "/content/drive/MyDrive/BTL_AII"
-```
-*Lưu ý: Chỉnh lại các tham số batch-size, workers phù hợp với cấu hình GPU.*
+-java.io 
 
-### Bước 5: Tạo bot Telegram để nhận thông báo
-Mở Telegram, tìm @BotFather.
-Gửi lệnh /start, sau đó gửi /newbot.
-Làm theo hướng dẫn để đặt tên bot và nhận Bot Token (ví dụ: 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11).
-Gửi một tin nhắn bất kỳ đến bot của bạn (ví dụ: "Hello").
-Truy cập URL sau trong trình duyệt: , thay YOUR_BOT_TOKEN bằng token của bạn
-```python
-https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates
-```
-Tìm chat_id trong JSON trả về (ví dụ: 123456789).
+**Công cụ phát triển**: Eclipse IDE
+
+**Hệ điều hành**: Windows 10
+
+**JDK**: Java SE
 
 
-### Bước 6: Nhận diện hành vi qua video
-Download best.pt từ file weights của file kết quả train, rồi tạo file python để
-chạy mô hình YOLOv8 để nhận diện hành vi trong video sử dụng webcam laptop với đoạn mã sau:
-
-```python
-import cv2
-import os
-import time
-from ultralytics import YOLO
-import requests
-
-# Thông tin Telegram Bot
-BOT_TOKEN = ''  # Thay bằng token của bạn
-CHAT_ID = ''       # Thay bằng chat ID của bạn
-TELEGRAM_API_URL = f'https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto'
-
-# Load your custom YOLOv8 model
-model = YOLO('D:/aiot/models/best (2).pt')  # Đường dẫn đến model của bạn
-
-# Create the 'detected_frames' directory if it doesn't exist
-output_folder = 'usingphone'
-if not os.path.exists(output_folder):
-    os.makedirs(output_folder)
-
-# Open webcam
-cap = cv2.VideoCapture(0)
-if not cap.isOpened():
-    print("Error: Could not open webcam.")
-    exit()
-
-frame_count = 0
-last_save_time = 0
-last_notify_time = 0  # Thời điểm gửi thông báo cuối cùng
-
-def send_telegram_notification(image_path, class_name):
-    """Gửi ảnh và thông báo qua Telegram"""
-    with open(image_path, 'rb') as photo:
-        message = f"Phát hiện: {class_name}"
-        files = {'photo': photo}
-        data = {
-            'chat_id': CHAT_ID,
-            'caption': message
-        }
-        response = requests.post(TELEGRAM_API_URL, files=files, data=data)
-        if response.status_code == 200:
-            print(f"Đã gửi thông báo Telegram: {message}")
-        else:
-            print(f"Lỗi gửi thông báo Telegram: {response.text}")
-
-while True:
-    ret, frame = cap.read()
-    if not ret:
-        print("Error: Could not read frame from webcam.")
-        break
-
-    # Perform object detection
-    results = model(frame)
-
-    # Kiểm tra nếu có phát hiện đối tượng
-    if len(results) > 0:
-        result = results[0]
-        if len(result.boxes) > 0:
-            # Lấy danh sách tên lớp của các đối tượng được phát hiện
-            class_ids = result.boxes.cls.cpu().numpy()
-            class_names = [result.names[int(cls_id)] for cls_id in class_ids]
-            annotated_frame = result.plot()  # Vẽ bounding boxes lên frame
-
-            # Kiểm tra nếu có nhãn "Using_phone"
-            if "Using_phone" in class_names:
-                current_time = time.time()
-                # Lưu ảnh nếu đã qua 1 giây
-                if current_time - last_save_time >= 1:
-                    frame_filename = os.path.join(output_folder, f'frame_{frame_count:04d}.jpg')
-                    cv2.imwrite(frame_filename, annotated_frame)
-                    print(f"Đã lưu ảnh: {frame_filename}")
-                    last_save_time = current_time
-                    frame_count += 1
-
-                    # Gửi thông báo Telegram nếu đã qua 5 giây
-                    if current_time - last_notify_time >= 5:
-                        send_telegram_notification(frame_filename, "Using_phone")
-                        last_notify_time = current_time
-        else:
-            annotated_frame = frame
-    else:
-        annotated_frame = frame
-
-    # Hiển thị frame
-    cv2.imshow('Live Stream Object Detection', annotated_frame)
-
-    # Thoát khi nhấn 'q'
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-# Giải phóng tài nguyên
-cap.release()
-cv2.destroyAllWindows()
-```
-Sau đó các frame nhận diện được bởi mô hình sẽ được lưu vào folder detected_frames, và các hành vi dùng điện thoại sẽ được gửi qua Telegram
+## 🚀 3. Hình ảnh các chức năng
 
 
-## Kết quả train model
-Ma trận nhầm lẫn
 <p align="center">
-  <img src="./anhimage/confusion_matrix.png" alt="matrix" width="800"/>
+  <img src="docs/Server.png" alt="Ảnh 1" width="500"/>
 </p>
-<br>
-Độ chính xác trung bình của các nhãn
 <p align="center">
-  <img src="./anhimage/model_test.jpg" alt="model_test" width="800"/>
+  <em>Hình 1: Giao diện Server  </em>
 </p>
-## 🤝 Đóng góp
-Dự án được phát triển bởi 3 thành viên:
 
-| Họ và Tên                | Vai trò                  |
-|--------------------------|--------------------------|
-| Võ Vĩnh Thái             | Phát triển toàn bộ mã nguồn,kiểm thử, triển khai dự án, thuyết trình, đề xuất cải tiến.|
-| Lê Ngọc Hưng            | Thực hiện video giới thiệu|
-| Phạm Tiến Dũng   | Viết báo cáo.  |
 
-© 2025 NHÓM 2, CNTT 16-01, TRƯỜNG ĐẠI HỌC ĐẠI NAM
+<p align="center">
+  <img src="docs/ClientA.png" alt="Ảnh 2" width="500"/>
+</p>
+<p align="center">
+  <em>Hình 2: Giao diện Client A  </em>
+</p><p align="center">
+
+
+  <img src="docs/ClientB.png" alt="Ảnh 3" width="500"/>
+</p>
+<p align="center">
+  <em>Hình 3: Giao diện Client B  </em>
+</p>
+
+<p align="center">
+  <img src="docs/Connect.png" alt="Ảnh 4" width="500"/>
+</p>
+<p align="center">
+  <em>Hình 4: Giao diện khi Server đã chạy và các Client đã kết nối  </em>
+</p>
+
+<p align="center">
+  <img src="docs/ChoseFile.png" alt="Ảnh 5" width="500"/>
+</p>
+<p align="center">
+  <em>Hình 5: Giao diện Khi chọn File  </em>
+</p>
+
+<p align="center">
+  <img src="docs/Received.png" alt="Ảnh 6" width="500"/>
+</p>
+<p align="center">
+  <em>Hình 6: Giao diện khi gửi File  </em>
+</p>
+
+<p align="center">
+  <img src="docs/StopServer.png" alt="Ảnh 1" width="500"/>
+</p>
+<p align="center">
+  <em>Hình 7: Giao diện khi dừng Server  </em>
+</p>
+
+## 📝 4. Các bước cài đặt
+
+#### Bước 1: Chuẩn bị môi trường
+1. **Kiểm tra Java**: Mở terminal/command prompt và chạy:
+   ```bash
+   java -version
+   javac -version
+   ```
+   Đảm bảo cả hai lệnh đều hiển thị phiên bản Java 8 trở lên.
+
+2. **Tải mã nguồn**: Sao chép thư mục `Truyen-file-qua-tcp` chứa các file:
+   - `Server.java`
+   - `Client.java`
+
+#### Bước 2: Biên dịch mã nguồn
+1. **Mở terminal** và điều hướng đến thư mục chứa mã nguồn
+2. **Biên dịch các file Java**:
+   ```bash
+   javac Truyen-file-qua-tcp/*.java
+   ```
+   Hoặc biên dịch từng file riêng lẻ:
+   ```bash
+   javac Truyen-file-qua-tcp/Server.java
+   javac Truyen-file-qua-tcp/Client.java
+   ```
+
+3. **Kiểm tra kết quả**: Nếu biên dịch thành công, sẽ tạo ra các file `.class` tương ứng.
+
+#### Bước 3: Chạy ứng dụng
+
+**Khởi động Server:**
+```bash
+java Truyen-file-qua-tcp.Server
+```
+- Server sẽ khởi động trên ip (127.0.0.1) và port (4000) mặc định 
+- Giao diện server sẽ hiển thị, sẵn sàng nhận kết nối từ client
+
+**Khởi động Client:**
+```bash
+java Truyen-file-qua-tcp.Client
+```
+- Nhập địa chỉ trên 2 Client để kết nối với Server
+- Client sẽ kết nối đến Server và log của Server sẽ hiện kết nối của từng Client
+
+### 🚀 Sử dụng ứng dụng
+
+1. **Kết nối**: Client kết nối đến Server sau khi nhập địa chỉ và nhấn kết nối
+2. **Chọn file**: Mở và chọn file để gửi
+3. **Gửi File**: Sau khi đã chọn file ta nhấn "Gửi File"
+4. **Nhận File**: Khi đã nhận file client còn lại sẽ nhận được file và thông báo đã nhận được
+5. **Lưu File**: Client sau khi nhận file sẽ lưu vào thu mục đã chỉ định sẵn
+6. **Ngắt kết nối**: Đóng cửa sổ client hoặc nhấn Ctrl+C để ngắt kết nối
+
+© 2025 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
+
+---
