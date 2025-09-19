@@ -68,45 +68,35 @@ TCP là giao thức hướng kết nối, đảm bảo tính tin cậy, toàn v�
 
 
 <p align="center">
-  <img src="docs/ClientA.png" alt="Ảnh 2" width="500"/>
+  <img src="docs/ClientA.png" alt="" width="500"/>
 </p>
 <p align="center">
   <em>Hình 2: Giao diện Client A  </em>
 </p><p align="center">
 
 
-  <img src="docs/ClientB.png" alt="Ảnh 3" width="500"/>
+  <img src="docs/ClientB.png" alt="" width="500"/>
 </p>
 <p align="center">
   <em>Hình 3: Giao diện Client B  </em>
 </p>
 
 <p align="center">
-  <img src="docs/Connect.png" alt="Ảnh 4" width="500"/>
+  <img src="docs/Connect.png" alt="" width="500"/>
 </p>
 <p align="center">
   <em>Hình 4: Giao diện khi Server đã chạy và các Client đã kết nối  </em>
 </p>
 
 <p align="center">
-  <img src="docs/ChoseFile.png" alt="Ảnh 5" width="500"/>
+  <img src="docs/ChoseFile.png" alt="" width="500"/>
 </p>
 <p align="center">
   <em>Hình 5: Giao diện Khi chọn File  </em>
 </p>
 
 <p align="center">
-  <img src="docs/Received.png" alt="Ảnh 6" width="500"/>
-</p>
-<p align="center">
-  <em>Hình 6: Giao diện khi gửi File  </em>
-</p>
-
-<p align="center">
-  <img src="docs/StopServer.png" alt="Ảnh 1" width="500"/>
-</p>
-<p align="center">
-  <em>Hình 7: Giao diện khi dừng Server  </em>
+  <img src="docs/Received.png" alt="" width="500"/>
 </p>
 
 ## 📝 4. Các bước cài đặt
