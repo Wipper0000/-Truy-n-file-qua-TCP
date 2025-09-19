@@ -68,35 +68,31 @@ TCP là giao thức hướng kết nối, đảm bảo tính tin cậy, toàn v�
 
 
 <p align="center">
-  <img src="docs/Ảnh 2.png" alt="Ảnh 2" width="500"/>
-</p>
-<p align="center">
-  <em>Hình 2: Giao diện chính của Client </em>
-</p><p align="center">
-
-
   <img src="docs/Ảnh 3.png" alt="Ảnh 3" width="500"/>
 </p>
 <p align="center">
-  <em>Hình 3: Giao diện chọn file để gửi </em>
+  <em>Hình 2: Giao diện chọn file để gửi </em>
 </p>
+
 
 <p align="center">
   <img src="docs/Ảnh 4.png" alt="Ảnh 4" width="500"/>
 </p>
 <p align="center">
-  <em>Hình 4: Giao diện Client sau khi chọn  </em>
+  <em>Hình 3: Giao diện Client sau khi chọn  </em>
 </p>
+
 
 <p align="center">
   <img src="docs/Ảnh 5.png" alt="Ảnh 5" width="500"/>
 </p>
 <p align="center">
-  <em>Hình 5: Giao diện Khi File gửi thành công  </em>
+  <em>Hình 4: Giao diện Khi File gửi thành công  </em>
 </p>
 
+
 <p align="center">
-  <img src="docs/Ảnh 66.png" alt="Ảnh 6" width="500"/>
+  <img src="docs/Ảnh 6.png" alt="Ảnh 6" width="500"/>
 </p>
 <p align="center">
   <em>Hình 5: Giao diện Client user khác truy cập server sau khi user 1 chuyển file</em>
@@ -113,43 +109,24 @@ TCP là giao thức hướng kết nối, đảm bảo tính tin cậy, toàn v�
    Đảm bảo cả hai lệnh đều hiển thị phiên bản Java 8 trở lên.
 
 2. **Tải mã nguồn**: Sao chép thư mục `Truyen-file-qua-tcp` chứa các file:
-   - `Server.java`
-   - `Client.java`
+   - `FileServer.java`
+   - `ChatClient.java`
 
 #### Bước 2: Biên dịch mã nguồn
-1. **Mở terminal** và điều hướng đến thư mục chứa mã nguồn
-2. **Biên dịch các file Java**:
-   ```bash
-   javac Truyen-file-qua-tcp/*.java
-   ```
-   Hoặc biên dịch từng file riêng lẻ:
-   ```bash
-   javac Truyen-file-qua-tcp/Server.java
-   javac Truyen-file-qua-tcp/Client.java
-   ```
-
-3. **Kiểm tra kết quả**: Nếu biên dịch thành công, sẽ tạo ra các file `.class` tương ứng.
-
-#### Bước 3: Chạy ứng dụng
-
-**Khởi động Server:**
+1.Chạy server:
 ```bash
-java Truyen-file-qua-tcp.Server
+java component.FileServer
 ```
-- Server sẽ khởi động trên ip (127.0.0.1) và port (4000) mặc định 
-- Giao diện server sẽ hiển thị, sẵn sàng nhận kết nối từ client
 
-**Khởi động Client:**
+2.Chạy Client:
 ```bash
-java Truyen-file-qua-tcp.Client
+java component.ChatClient
 ```
-- Nhập địa chỉ trên 2 Client để kết nối với Server
-- Client sẽ kết nối đến Server và log của Server sẽ hiện kết nối của từng Client
+<p></p>
 
+#### Source Code 
 
-**Code raw:**
-
-1.FileServer.java:
+1. FileServer.java:
 ```package component;
 
 import java.io.*;
@@ -260,7 +237,7 @@ public class FileServer {
 }
 ```
 
-2.ChatClient.java:
+2. ChatClient.java:
 ```
 package component;
 
@@ -432,12 +409,13 @@ public class ChatClient extends JFrame {
 ```
 ### 🚀 Sử dụng ứng dụng
 
-1. **Kết nối**: Client kết nối đến Server sau khi nhập địa chỉ và nhấn kết nối
-2. **Chọn file**: Mở và chọn file để gửi
-3. **Gửi File**: Sau khi đã chọn file ta nhấn "Gửi File"
-4. **Nhận File**: Khi đã nhận file client còn lại sẽ nhận được file và thông báo đã nhận được
-5. **Lưu File**: Client sau khi nhận file sẽ lưu vào thu mục đã chỉ định sẵn
-6. **Ngắt kết nối**: Đóng cửa sổ client hoặc nhấn Ctrl+C để ngắt kết nối
+1. **Kết nối server**: chạy Server.java để lắng nghe trên port (ví dụ 5001).
+2. **Kết nối Client**: chạy Client.java và nhập IP, port server để kết nối.
+3. **Chọn File**: client chọn file cần gửi từ máy tính.
+4. **Gửi File**: client gửi file qua socket TCP tới server.
+5. **Nhận File**: server nhận dữ liệu và ghi file vào thư mục đích.
+6. **Lưu File**: file được lưu tự động trong thư mục mặc định của server.
+7. **Ngắt kết nối**:client thoát ứng dụng hoặc nhấn Ctrl+C để dừng.
 
 © 2025 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 
