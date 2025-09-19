@@ -51,7 +51,7 @@ TCP là giao thức hướng kết nối, đảm bảo tính tin cậy, toàn v�
 
 **Công cụ phát triển**: Eclipse IDE
 
-**Hệ điều hành**: Windows 10
+**Hệ điều hành**: Windows 11
 
 **JDK**: Java SE
 
@@ -63,40 +63,43 @@ TCP là giao thức hướng kết nối, đảm bảo tính tin cậy, toàn v�
   <img src="docs/Server.png" alt="Ảnh 1" width="500"/>
 </p>
 <p align="center">
-  <em>Hình 1: Giao diện Server  </em>
+  <em>Hình 1: Giao diện nhập tên user </em>
 </p>
 
 
 <p align="center">
-  <img src="docs/ClientA.png" alt="" width="500"/>
+  <img src="docs/ClientA.png" alt="Ảnh 2" width="500"/>
 </p>
 <p align="center">
-  <em>Hình 2: Giao diện Client A  </em>
+  <em>Hình 2: Giao diện chính của Client </em>
 </p><p align="center">
 
 
-  <img src="docs/ClientB.png" alt="" width="500"/>
+  <img src="docs/ClientB.png" alt="Ảnh 3" width="500"/>
 </p>
 <p align="center">
-  <em>Hình 3: Giao diện Client B  </em>
-</p>
-
-<p align="center">
-  <img src="docs/Connect.png" alt="" width="500"/>
-</p>
-<p align="center">
-  <em>Hình 4: Giao diện khi Server đã chạy và các Client đã kết nối  </em>
+  <em>Hình 3: Giao diện chọn file để gửi </em>
 </p>
 
 <p align="center">
-  <img src="docs/ChoseFile.png" alt="" width="500"/>
+  <img src="docs/Connect.png" alt="Ảnh 4" width="500"/>
 </p>
 <p align="center">
-  <em>Hình 5: Giao diện Khi chọn File  </em>
+  <em>Hình 4: Giao diện Client sau khi chọn  </em>
 </p>
 
 <p align="center">
-  <img src="docs/Received.png" alt="" width="500"/>
+  <img src="docs/ChoseFile.png" alt="Ảnh 5" width="500"/>
+</p>
+<p align="center">
+  <em>Hình 5: Giao diện Khi File gửi thành công  </em>
+</p>
+
+<p align="center">
+  <img src="docs/ChoseFile.png" alt="Ảnh 6" width="500"/>
+</p>
+<p align="center">
+  <em>Hình 5: Giao diện Client user khác truy cập server sau khi user 1 chuyển file</em>
 </p>
 
 ## 📝 4. Các bước cài đặt
