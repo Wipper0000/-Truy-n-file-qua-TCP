@@ -142,9 +142,12 @@ java Truyen-file-qua-tcp.Client
 ```
 - Nhập địa chỉ trên 2 Client để kết nối với Server
 - Client sẽ kết nối đến Server và log của Server sẽ hiện kết nối của từng Client
+
+
 **Code raw:**
+
 1.FileServer.java:
-  package component;
+```package component;
 
 import java.io.*;
 import java.net.*;
@@ -252,8 +255,10 @@ public class FileServer {
         }
     }
 }
+```
 
 2.ChatClient.java:
+```
 package component;
 
 import javax.swing.*;
@@ -421,6 +426,7 @@ public class ChatClient extends JFrame {
         });
     }
 }
+```
 ### 🚀 Sử dụng ứng dụng
 
 1. **Kết nối**: Client kết nối đến Server sau khi nhập địa chỉ và nhấn kết nối
